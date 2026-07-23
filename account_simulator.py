@@ -10,7 +10,7 @@ if OPERATION == "1":
     print("Deposit selected")
     DEPOSIT = int(input("enter amount: "))
 
-#here we start file with apend
+#Here we start file with apend
     with open("account_data.txt", "a", encoding="utf-8") as file:#encoding="utf-8": Translator Dictionary which define the type of the text
         file.write(f"deposit:{DEPOSIT}\n")
 
@@ -31,9 +31,9 @@ elif OPERATION == "3":
 
     try:# Errors (crashes) ko handle karna
         with open("account_data.txt", "r", encoding="utf-8") as file:
-            for line in file:
-                line = line.strip()
-                if not line:
+            for line in file:#This reads the file line by line.
+                line = line.strip()#Removes extra spaces or blank spaces from the line.
+                if not line:#if line is empty,skip it
                     continue
 
                 operation, amount = line.split(":", 1)
@@ -43,21 +43,31 @@ elif OPERATION == "3":
                     balance += amount
                 elif operation == "withdraw":
                     balance -= amount
-    except FileNotFoundError:#Exception Handling
+    except (FileNotFoundError, ValueError):#Exception Handling
         balance = 0
 
     print(f"Current balance: {balance}")
 
 elif OPERATION == "4":
-    print(f"HISTORY:")
+    print("HISTORY:")
 
-    with open("account_data.txt", "r", encoding="utf-8") as file:
-        file.read(f"transection history:{HISTORY}\n")
+    try:
+        with open("account_data.txt", "r", encoding="utf-8") as file:
+            history_lines = file.readlines()
+
+        if history_lines:
+            print("Transaction history:")
+            for line in history_lines:
+                print(line.strip())
+        else:
+            print("No transaction history yet.")
+    except FileNotFoundError:
+        print("No transaction history yet.")
 
 
 elif OPERATION == "5":
     print("EXIT")
 
 else:
-    print("Invalid option. Please choose 1, 2 or 3.")
+    print("Invalid option. Please choose 1, 2 , 3 , 4 or 5")
 

@@ -1,2 +1,3 @@
-deposit:9999
-deposit:120
+deposit:450
+deposit:450
+withdraw:120
