@@ -1,5 +1,5 @@
 # Simple Bank Account Simulator
-# Users can deposit, withdraw, and check their balance.
+# Users can deposit, withdraw, check their balance , history and Exit.
 
 print("========💸💸BANK ACCOUNT SIMULATOR💸💸=======")
 #starting aur ending ki extra spaces ko hatata hai  not b/w the text .strip()
