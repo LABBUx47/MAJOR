@@ -5,7 +5,7 @@ print("========💸💸BANK ACCOUNT SIMULATOR💸💸=======")
 #starting aur ending ki extra spaces ko hatata hai  not b/w the text .strip()
 OPERATION = input("choose operation: \n 1. DEPOSIT \n 2. WITHDRAW \n 3. BALANCE INQUIRY\n 4. HISTORY\n 5. EXIT ").strip()
 
-#if aur elif aapke code ko decisions lene ki power dete hain.
+#if aur elif are the conditional statement
 if OPERATION == "1":
     print("Deposit selected")
     DEPOSIT = int(input("enter amount: "))
@@ -29,14 +29,14 @@ elif OPERATION == "3":
     print("BALANCE INQUIRY selected")
     balance = 0 # defining intial balence zero
 
-    try:# Errors (crashes) ko handle karna
+    try:# keyword that handle Errors (crashes) 
         with open("account_data.txt", "r", encoding="utf-8") as file:
             for line in file:#This reads the file line by line.
                 line = line.strip()#Removes extra spaces or blank spaces from the line.
                 if not line:#if line is empty,skip it
                     continue
 
-                operation, amount = line.split(":", 1)
+                operation, amount = line.split(":", 1)# spliting line and convert text ammount into int
                 amount = int(amount)
 
                 if operation == "deposit":
