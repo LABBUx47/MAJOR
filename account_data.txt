@@ -2,3 +2,7 @@ deposit:450
 deposit:450
 withdraw:120
 deposit:45
+deposit:41
+withdraw:14
+deposit:120
+withdraw:700

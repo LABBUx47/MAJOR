@@ -36,7 +36,7 @@ elif OPERATION == "3":
                 if not line:#if line is empty,skip it
                     continue
 
-                operation, amount = line.split(":", 1)# spliting line and convert text ammount into int
+                operation, amount = line.split(":", 1)# spliting line and convert text ammount into it
                 amount = int(amount)
 
                 if operation == "deposit":
