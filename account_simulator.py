@@ -51,7 +51,7 @@ elif OPERATION == "3":
 elif OPERATION == "4":
     print("HISTORY:")
 
-    try:
+    try:#erroe crashes
         with open("account_data.txt", "r", encoding="utf-8") as file:
             history_lines = file.readlines()
 
